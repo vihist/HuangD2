@@ -3,8 +3,9 @@
 /[Oo]bj/
 /[Bb]uild/
 /[Bb]uilds/
-/Assets/AssetStoreTools*
 /[Rr]elease/
+/Assets/AssetStoreTools*
+/Assets/XLua/Gen/
 
 # Visual Studio 2015 cache directory
 /.vs/
