@@ -31,14 +31,11 @@ public class StartScene : MonoBehaviour
 
     }
 
-    public void OnValueChanged1()
-    {
-        Debug.Log("TianX");
-    }
-
     public void OnButtonNew()
     {
-        GameFrame.GetInstance().OnNew();
+		SceneManager.LoadSceneAsync("InitScene");
+
+        // GameFrame.GetInstance().OnNew();
 
         //GameObject UIRoot = GameObject.Find("Canvas");
         //GameObject dialog = Instantiate(Resources.Load("EasyMenu/_Prefabs/Dialog_Init"), UIRoot.transform) as GameObject;

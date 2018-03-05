@@ -37,7 +37,7 @@ public interface ItfEvent
 }
 
 
-public class MainScript : MonoBehaviour
+public class MainScene : MonoBehaviour
 {
 	// Use this for initialization
 	LuaEnv luaenv = null;
@@ -54,6 +54,7 @@ public class MainScript : MonoBehaviour
 
         SceneManager.LoadSceneAsync(m_currSceneName, LoadSceneMode.Additive);
 
+		LuaTest ();
         //GameObject.Find("Canvas").transform.Find("Emperor").Find("name").GetComponent<Text>().text = Global.GetGameData().m_Emperor.GetName();
 	}
 	
@@ -125,6 +126,17 @@ public class MainScript : MonoBehaviour
 
         Debug.Log("title = " + eventobj.title);
         Debug.Log("desc = " + eventobj.desc);
+
+		luaenv.DoString("require 'Table'");
+
+		List<string> tableobj = luaenv.Global.Get<List<string>>("table");
+
+		Debug.Log("tableobj count = " + tableobj.Count);
+
+		foreach(string str in tableobj)
+		{
+			Debug.Log("tb = " + str);
+		}
 
         /*		Debug.Log("op1 = " + eventobj.option.op1);
                 Debug.Log("op2 = " + eventobj.option.op2);
